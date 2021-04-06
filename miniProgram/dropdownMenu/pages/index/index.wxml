@@ -1,0 +1,3 @@
+<!--pages/index/index.wxml-->
+<!-- 引入组件 -->
+<s-dropdown bind:closeMask="closeMask" menu="{{menu}}" options="{{options}}" showOrHide="{{showOrHide}}"></s-dropdown>

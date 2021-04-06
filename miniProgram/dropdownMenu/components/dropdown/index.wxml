@@ -1,0 +1,24 @@
+<!--components/dropdown/index.wxml-->
+<view id="menu" class="dropdown-menu">
+  <view data-index="{{index}}"
+        wx:for="{{menu}}" wx:key="index"
+        class="menu-item {{item.isActive?'active':''}}"
+        bind:tap="handleClick">
+    <text>{{item.text}}</text>
+    <icon class="menu-icon {{item.isActive?'active':''}}" />
+  </view>
+</view>
+<!-- 选项 -->
+<view>
+  <view class="dropdown-item" style="height: {{windowHeight-topHeight}}px; top:{{topHeight}}px; {{overlay}}">
+    <!-- 遮罩层 -->
+    <view class="mask {{maskClassConversion}}" style="animation-duration: {{duration}}s; {{overlay}}" bind:tap="closeMask"></view>
+    <!-- 选项循环 -->
+    <scroll-view scroll-y="{{true}}" class="dropdown-options {{showOrHide?'slide-down':'slide-up'}}" style="transition-duration: {{duration}}s; {{overlay}}">
+      <view class="options {{item.itemIsActive?'active':''}}" wx:for="{{selectedItem}}" wx:key="index" data-contact="{{item.text}}" data-id="{{item.id}}" bind:tap="closeMask">
+        <text>{{item.text}}</text>
+        <icon class="{{item.itemIsActive?'options-icon':''}}" />
+      </view>
+    </scroll-view>
+  </view>
+</view>

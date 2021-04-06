@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "s-dropdown": "/components/dropdown/index"
+  }
+}
